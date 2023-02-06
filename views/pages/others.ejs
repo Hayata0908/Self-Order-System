@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+       <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+   </head>
+   <body>
+ 
+   <header class="container-fluid">
+       <%- include('../partials/header',{current:'others'}); %>
+   </header>
+ 
+   <main class="container">
+        <div class="jumbotron"><!--各種コンポーネントを画面最大まで表示できるクラス-->
+            <div class="bg-image" style="background-image: url('https://i.picsum.photos/id/1022/6000/3376.jpg?hmac=FBA9Qbec8NfDlxj8xLhV9k3DQEKEc-3zxkQM-hmfcy0');
+            height: 50vh">
+        
+            <div class="container" style="display: flex; justify-content: center; align-items: center; height: 50vh">
+              <h1 style="color:white">Web Application EJS + Express</h1>   
+            </div>
+   </main>
+ 
+   <footer class="fixed-bottom">
+       <%- include('../partials/footer'); %>
+   </footer>
+ 
+   </body>
+</html>

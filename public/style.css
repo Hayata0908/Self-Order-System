@@ -1,0 +1,21 @@
+@charset "utf-8";
+body {
+  padding-top:50px;
+  margin-bottom:50px;
+  font-family:Verdana, "メイリオ", sans-serif;
+}
+main{
+  margin-bottom:50px;
+}
+
+.bbn {
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+  }
+
+.none{
+  display: none;
+}

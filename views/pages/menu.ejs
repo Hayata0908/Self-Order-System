@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+       <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+   </head>
+   <body class="container">
+ 
+   <header>
+        <a class="btn" href="/" role="button">indexページ</a>
+   </header>
+ 
+   <main>
+        <%- include('../partials/imput'); %>
+        <h3><%= text %></h3>
+   </main>
+ 
+   <footer class="fixed-bottom">
+       <%- include('../partials/footer'); %>
+   </footer>
+ 
+   </body>
+</html>

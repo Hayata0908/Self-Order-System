@@ -1,0 +1,31 @@
+<!--他の内部ページへアクセスするためのナビゲーションバー-->
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <ul class="navbar-nav mr-auto container-fluid">
+        <div></div>
+        <div>
+            <a class="navbar-brand" <%- current == 'meat' ? 'tabindex="-1"' : 'href="/meat"'; %> role="button">肉・卵</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'fish' ? 'tabindex="-1"' : 'href="/fish"'; %> role="button">魚介類</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'vegetable' ? 'tabindex="-1"' : 'href="/vegetable"'; %> role="button">野菜</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'sweet' ? 'tabindex="-1"' : 'href="/sweet"'; %> role="button">お菓子</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'drink' ? 'tabindex="-1"' : 'href="/drink"'; %> role="button">飲料</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'cloths' ? 'tabindex="-1"' : 'href="/cloths"'; %> role="button">服</a>
+        </div>
+        <div>
+            <a class="navbar-brand" <%- current == 'others' ? 'tabindex="-1"' : 'href="/others"'; %> role="button">その他</a>
+        </div>
+        <div>
+            <a class="navbar-brand" href="/regi">買い物かご</a>
+        </div>
+        <div></div>
+    </ul>
+</nav>

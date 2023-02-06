@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+    </head>
+    <body class="container">
+        <header>
+            <a class="btn" href="/">メニュー</a>
+        </header>
+        
+        <main>
+                <h1>ご購入ありがとうございます</h1>
+                <p>あなたの番号</p>
+                <h1>  <%- user %>   </h1>
+                <script>
+                    setTimeout(function(){
+                        window.location.href = '/';
+                    }, 6*1000);
+                </script>
+        </main>
+        
+        <footer class="fixed-bottom">
+            <%- include('../partials/footer'); %>
+        </footer>
+   </body>
+</html>

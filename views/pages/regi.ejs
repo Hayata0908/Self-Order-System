@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+       <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+   </head>
+   <body class="container">
+ 
+   <header>
+        <h1>買い物かご</h1>
+       <a class="bbn" href="/">メニューに戻る</a>
+   </header>
+ 
+   <main>
+    <form id="formId" method="post">
+        <table class="table">
+            <thead>
+                <tr align="center" valign="middle">
+                    <th scope="col" width = "30%">商品名</th>
+                    <th scope="col" width = "40%">値段</th>
+                    <th scope="col" width = "30%" colspan="3">数量</th>
+                </tr>
+            </thead>
+            <% for (let i = 0; i < kago.length; i++) { %>
+                <tr align="center" valign="middle">
+                    <th scope="col">
+                        <span> <%- kago[i].name %> </span>
+                    </th>
+                    <td>
+                        <h4 id="price[<%= i %>]"> <%- kago[i].price * kago[i].amount %>円</h4>
+                    </td>
+                    <td scope="col" width = "7%">
+                        <button type="button" class="bbn" id="down[<%= i %>]" name=<%= i %>><i class="bi bi-caret-down-fill"></i></button>
+                    </td>
+                    <td scope="col" width = "16%">
+                        <span id="amount[<%= i %>]"><%- kago[i].amount * parseFloat(kago[i].bai) %><%- kago[i].count %></span>
+                    </td>
+                    <td scope="col" width = "7%">
+                        <button type="button" class="bbn" id="up[<%= i %>]" onclick="up_mm(kago,JSON.parse('<%= JSON.stringify(i) %>'))"><i class="bi bi-caret-up-fill"></i></button>
+                    </td>
+                </tr>
+                <div style="visibility:hidden">
+                    <input type="text" name = "name[<%= i %>]" id="name[<%= i %>]" value=<%- kago[i].name %>>
+                    <input type="text" name = "bai[<%= i %>]" id="bai[<%= i %>]" value=<%- kago[i].bai %>>
+                </div>
+            <% } %>
+            <tr align="center" valign="middle">
+                <th scope="col">
+                    <span>合計</span>
+                </th>
+                <td><h3 id="Sum"></h3></td>
+                <td></td>
+                <td>
+                    <button type="button" class="bbn" id="sum_up" style="width: 100%">会計</button>
+                </td>
+            </tr>
+        </table>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary" role="button">購入</a>
+        </div>
+    </form>
+        <script>
+            let kago = JSON.parse('<%- JSON.stringify(kago) %>');
+            let prices = [];let amounts = [];let down = [];let name = [];let bai = [];
+            document.addEventListener("DOMContentLoaded", function(){
+                for (let i=0;i < kago.length;i++){
+                    down[i] = document.getElementById("down["+ i +"]");
+                    down[i].addEventListener('click', {name : i, handleEvent : down_mm }, false);
+                    prices[i] = document.querySelector('[id="price['+ i +']"]');
+                    amounts[i] = document.querySelector('[id="amount['+ i +']"]');
+                    name[i] = document.forms[0].elements["name["+ i +"]"];
+                    bai[i] = document.forms[0].elements["bai["+ i +"]"];
+                    console.log(bai[i]);
+                };
+                cul_sum = document.querySelector('[id="Sum"]');
+                sum_up.addEventListener('click',sum,false);
+            }, false); 
+            function down_mm(){
+                console.log(this);
+                if (kago[this.name].bai != '1'){
+                    kago[this.name].bai=String(parseFloat(kago[this.name].bai)-1);
+                    for (let i=0;i<kago.length;i++){
+                        prices[this.name].innerHTML = " " + kago[this.name].price * kago[this.name].amount * parseFloat(kago[this.name].bai) + "円 ";
+                        amounts[this.name].innerHTML = kago[this.name].amount * parseFloat(kago[this.name].bai) + kago[this.name].count;
+                        name[this.name].value = kago[this.name].name;
+                        bai[this.name].value = parseFloat(kago[this.name].bai);
+                    };
+                };
+                sum();
+            };
+            function up_mm(kago,i){
+                kago[i].bai=String(parseFloat(kago[i].bai)+1);
+                console.log(kago[i].price * kago[i].amount * parseFloat(kago[i].bai));
+                for (let i=0;i<kago.length;i++){
+                    prices[i].innerHTML = " " + kago[i].price * kago[i].amount * parseFloat(kago[i].bai) + "円 ";
+                    amounts[i].innerHTML = kago[i].amount * parseFloat(kago[i].bai) + kago[i].count;
+                    name[i].value = kago[i].name;
+                    bai[i].value = kago[i].bai;
+                };
+                sum();
+            };
+            function sum(){
+                let m = 0;
+                for(let item of kago){
+                    m = m + item.price * item.amount * parseFloat(item.bai);
+                };
+                cul_sum.innerHTML = m + "円 ";
+            }
+        </script> 
+   </main>
+ 
+   <footer class="fixed-bottom">
+       <%- include('../partials/footer'); %>
+   </footer>
+ 
+   </body>
+</html>

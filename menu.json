@@ -1,0 +1,9 @@
+[{"name":"鶏肉","price":0.98,"tag":"meat","amount":100,"count":"g","pic":"https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-357864224.jpg"},
+{"name":"豚肉","price":1.2,"tag":"meat","amount":100,"count":"g","pic":"https://tsukatte.com/wp-content/uploads/2022/01/pork_loin.png"},
+{"name":"牛肉","price":2,"tag":"meat","amount":100,"count":"g","pic":"https://tsukatte.com/wp-content/uploads/2021/12/beef_steak.png"},
+{"name":"鶏卵","price":20,"tag":"meat","amount":8,"count":"個","pic":"https://tsukatte.com/wp-content/uploads/2020/02/egg_ec.png"},
+{"name":"etc.","price":3,"tag":"others","amount":100,"count":"g","pic":"https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-357864224.jpg"},
+{"name":"さくらもち","price":100,"tag":"sweet","amount":1,"count":"個","pic":"https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-357864224.jpg"},
+{"name":"あさり","price":3,"tag":"fish","amount":100,"count":"g","pic":"https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-357864224.jpg"},
+{"name":"タケノコの山","price":150,"tag":"sweet","amount":1,"count":"個","pic":"https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-357864224.jpg"},
+{"name":"国産牛","price":9,"tag":"meat","amount":100,"count":"g","pic":"https://thumb.ac-illust.com/98/98832f65027b0a82bfd354f010aadbdd_t.jpeg"}]

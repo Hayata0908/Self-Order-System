@@ -1,0 +1,11 @@
+<h3><%- text %> </h3>
+<form method="post">
+    <% for (let item of tell) { %>
+        <input type="hidden" name="contents[]" value="0">
+        <input type="checkbox" name="contents[]" class="btn-check" id=<%- item.name %> autocomplete="off" value="1">
+        <label class="btn btn-outline-dark btn-lg" for=<%- item.name %>><%- item.name %><br><%- item.amount %><%- item.count %>あたり<%- item.price * item.amount %>円<br><img src=<%- item.pic %> alt="Dinosaur" width="200" height="200"></label>
+    <% } %>
+    <div class="d-grid gap-2">
+        <input type="submit" class="btn btn-primary" value="カゴに入れる">
+    </div>
+</form>

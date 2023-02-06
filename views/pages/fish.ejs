@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+   </head>
+   <body>
+ 
+   <header class="container-fluid">
+        <h1>魚介類</h1>
+        <p>購入するものを決めてボタンを押してください</p>
+       <%- include('../partials/header',{current:'fish'}); %>
+   </header>
+ 
+   <main class="container">
+        <%- include('../partials/each') %> 
+   </main>
+ 
+   <footer class="fixed-bottom">
+       <%- include('../partials/footer'); %>
+   </footer>
+ 
+   </body>
+</html>

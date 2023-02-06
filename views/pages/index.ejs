@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+       <%- include('../partials/head'); %><!-- %- include(読み込むパーツの相対パス); %>と書くことで、別ファイルの組み込み-->
+   </head>
+   <body class="container">
+    
+    <header>
+        <h1>購入商品の分類を選んでください</h1>
+        <!--<p>店員でない方は恐れ入りますが、店員を呼んでください。</p>-->
+    </header>
+   <main>
+        <%- include('../partials/header',{
+            current:""
+        }); %>
+        <h1>___________________</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn" href="/menu" role="button">商品削除(未)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="/menu" role="button">商品追加</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="/menu" role="button">商品情報変更(未)</a>
+                </li>
+            </ul>
+        </nav>
+   </main>
+ 
+   <footer class="fixed-bottom">
+       <%- include('../partials/footer'); %>
+   </footer>
+ 
+   </body>
+</html>
