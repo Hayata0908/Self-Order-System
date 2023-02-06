@@ -3,15 +3,15 @@
 セルフレジの操作画面
 
 ## 使ったもの
-express, ejs, json
+node(サーバの実態), express(フレームワーク), ejs(htmlのようなサイトの表示), json(データ管理)
 
 ## 始め方
+nodeがパソコンに入っていない場合は以下でダウンロード&インストール。
+https://nodejs.org/ja/download/
+
 フォルダに移動後
 
-$  .\Scripts\activate.bat
-($は消してください)
-
-を実行。
+$  npm install
 
 $  node app
 
